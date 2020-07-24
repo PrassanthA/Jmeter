@@ -2,10 +2,11 @@ node {
    stage('Build') {
       // Run the Taurus build
    }
+   sh 'git clone https://github.com/PrassanthA/Jmeter/'
    stage('Performance Tests') {
     parallel(
         BlazeMeterTest: {
-            dir ('https://github.com/PrassanthA/Jmeter') {
+            dir ('Jmeter') {
                 sh 'bzt sample.yml -report'
             }
         },
