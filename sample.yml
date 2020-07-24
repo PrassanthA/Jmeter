@@ -1,0 +1,20 @@
+---
+execution:
+- concurrency: 10
+  hold-for: 1190s
+  iterations: 1
+  ramp-up: 10s
+  scenario: Sample Jenkins
+scenarios:
+  Sample Jenkins:
+    requests:
+    - do: []
+      include-timers: false
+      transaction: Sample Transaction 1
+    - do: []
+      include-timers: false
+      transaction: Sample Transaction 2
+    store-cache: false
+    store-cookie: false
+    use-dns-cache-mgr: false
+
